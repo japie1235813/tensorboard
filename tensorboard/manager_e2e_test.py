@@ -26,8 +26,8 @@ import shutil
 import subprocess
 import tempfile
 import textwrap
+import urllib.request
 
-from six.moves import urllib
 import tensorflow as tf
 
 try:
