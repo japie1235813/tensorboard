@@ -16,9 +16,8 @@
 
 
 import argparse
+import io
 import sys
-
-import six
 
 try:
     # python version >= 3.3
@@ -136,7 +135,7 @@ class WerkzeugServerTest(tb_test.TestCase):
 class SubcommandTest(tb_test.TestCase):
     def setUp(self):
         super(SubcommandTest, self).setUp()
-        self.stderr = six.StringIO()
+        self.stderr = io.StringIO()
         patchers = [
             mock.patch.object(program.TensorBoard, "_install_signal_handler"),
             mock.patch.object(program.TensorBoard, "_run_serve_subcommand"),

@@ -17,9 +17,8 @@
 
 
 import gzip
+import io
 import struct
-
-import six
 
 try:
     # python version >= 3.3
@@ -331,14 +330,14 @@ class RespondTest(tb_test.TestCase):
 
 
 def _gzip(bs):
-    out = six.BytesIO()
+    out = io.BytesIO()
     with gzip.GzipFile(fileobj=out, mode="wb") as f:
         f.write(bs)
     return out.getvalue()
 
 
 def _gunzip(bs):
-    with gzip.GzipFile(fileobj=six.BytesIO(bs), mode="rb") as f:
+    with gzip.GzipFile(fileobj=io.BytesIO(bs), mode="rb") as f:
         return f.read()
 
 
