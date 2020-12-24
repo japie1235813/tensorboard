@@ -48,7 +48,6 @@ py_library(
         "//tensorboard/util:tensor_util",
         "@com_google_protobuf//:protobuf_python",
         "@org_pocoo_werkzeug",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -133,7 +132,6 @@ py_binary(
         "//tensorboard:expect_numpy_installed",
         "//tensorboard:expect_tensorflow_installed",
         "//tensorboard/plugins/scalar:summary",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -148,7 +146,6 @@ py_binary(
         "//tensorboard:expect_absl_flags_installed",
         "//tensorboard:expect_tensorflow_installed",
         "//tensorboard/plugins/scalar:summary",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -163,7 +160,6 @@ py_binary(
         "//tensorboard:expect_absl_flags_installed",
         "//tensorboard:expect_tensorflow_installed",
         "@com_google_protobuf//:protobuf_python",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -227,7 +223,6 @@ py_test(
         "//tensorboard:expect_tensorflow_installed",
         "@com_google_protobuf//:protobuf_python",
         "@org_pythonhosted_mock",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -241,7 +236,6 @@ py_library(
         "//tensorboard:expect_numpy_installed",
         "//tensorboard/compat",
         "//tensorboard/compat/proto:protos_all_py_pb2",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -260,7 +254,6 @@ py_test(
         "//tensorboard/compat/proto:protos_all_py_pb2",
         "@com_google_protobuf//:protobuf_python",
         "@org_pythonhosted_mock",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -281,7 +274,6 @@ py_test(
         "//tensorboard/compat/proto:protos_all_py_pb2",
         "@com_google_protobuf//:protobuf_python",
         "@org_pythonhosted_mock",
-        "@org_pythonhosted_six",
     ],
 )
 

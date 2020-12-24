@@ -34,7 +34,6 @@ py_test(
         ":metadata",
         "//tensorboard:expect_tensorflow_installed",
         "@org_pythonhosted_mock",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -51,7 +50,6 @@ py_library(
         "//tensorboard/plugins:base_plugin",
         "//tensorboard/util:tensor_util",
         "@org_pocoo_werkzeug",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -84,7 +82,6 @@ py_test(
         "//tensorboard/util:test_util",
         "@org_pocoo_werkzeug",
         "@org_pythonhosted_mock",
-        "@org_pythonhosted_six",
     ],
 )
 

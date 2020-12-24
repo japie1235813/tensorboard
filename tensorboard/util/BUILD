@@ -24,7 +24,6 @@ py_test(
         ":encoder",
         "//tensorboard:expect_numpy_installed",
         "//tensorboard:expect_tensorflow_installed",
-        "@org_pythonhosted_six",
     ],
 )
 
@@ -54,7 +53,6 @@ py_test(
         "//tensorboard:test",
         "//tensorboard:version",
         "@org_pythonhosted_mock",
-        "@org_pythonhosted_six",
     ],
 )
 
