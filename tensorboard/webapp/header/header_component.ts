@@ -22,6 +22,7 @@ import {Component} from '@angular/core';
       <plugin-selector class="plugins"></plugin-selector>
       <tbdev-upload-button></tbdev-upload-button>
       <app-header-reload></app-header-reload>
+      <notification-center></notification-center>
       <settings-button></settings-button>
       <a
         class="readme"

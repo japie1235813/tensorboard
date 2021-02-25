@@ -14,3 +14,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+<!-- replace the below error_24px with notificaitons_none_24px  -->
+<button class="reload-button" mat-icon-button>
+  <mat-icon
+    class="notification-icon"
+    svgIcon="error_24px"
+    [matMenuTriggerFor]="menu"
+  ></mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+  <div mat-menu-item>update</div>
+</mat-menu>
