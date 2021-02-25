@@ -1,6 +1,4 @@
-<!--
-@license
-Copyright 2021 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2021 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,16 +11,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
-<!-- replace the below error_24px with notificaitons_none_24px  -->
-<button class="reload-button" mat-icon-button>
-  <mat-icon
-    class="notification-icon"
-    svgIcon="error_24px"
-    [matMenuTriggerFor]="menu"
-  ></mat-icon>
-</button>
+==============================================================================*/
 
-<mat-menu #menu="matMenu">
-  <div mat-menu-item>update</div>
-</mat-menu>
+export {NotificationCenterModule} from './_notification_center_module';
