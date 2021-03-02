@@ -31,4 +31,8 @@ export class NotificationCenterContainer {
       content: '<li>update 1</li><li>update 2</li>',
     },
   ];
+
+  constructor() {
+    console.log('container this.notifications: ', this.notifications);
+  }
 }

@@ -28,5 +28,10 @@ limitations under the License.
 </button>
 
 <mat-menu #menu="matMenu">
-  <div mat-menu-item>notification 1</div>
+  <!-- 2.4 release -->
+  <div>{{notifications[0].title}}</div>
+  <!-- 1 -->
+  <div>{{notifications.length}}</div>
+  <!-- nothing here ?!! -->
+  <div *ngFor="let notification of notifications">123</div>
 </mat-menu>
