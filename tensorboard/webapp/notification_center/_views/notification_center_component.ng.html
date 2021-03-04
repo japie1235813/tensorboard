@@ -14,13 +14,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<button mat-icon-button [matMenuTriggerFor]="menu">
+<button mat-icon-button [matMenuTriggerFor]="menu" id="matBtn">
   <mat-icon svgIcon="notifications_none_24px"></mat-icon>
 </button>
 
-<mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu" id="notification-menu">
   <div class="notification-menu">
-    <div *ngFor="let notification of notifications; let i = index">
+    <div
+      *ngFor="let notification of notifications; let i = index"
+      class="menu-item"
+    >
       <div>
         <mat-icon svgIcon="{{ iconList[i] }}" class="category-icon"></mat-icon>
         <span>{{ notification.category }}</span>・

@@ -14,24 +14,38 @@ limitations under the License.
 ==============================================================================*/
 
 ::ng-deep.mat-menu-panel {
-  width: 351px;
+  max-width: none !important;
+  width: 350px;
+}
+
+::ng-deep.cdk-overlay-connected-position-bounding-box {
+  right: 6px !important;
+  top: 71px !important;
+}
+
+.menu-item {
+  padding: 17px 17px 0 17px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu-item:last-child {
+  border-bottom: 0;
 }
 
 .notification-menu {
-  padding: 15px 17px;
   font-size: 10px;
 }
 
 .category-icon {
-  height: 16.67px;
+  height: 16px;
   vertical-align: middle;
-  width: 16.67px;
+  width: 16px;
   color: #4285f4;
-  margin-right: 5.67px;
+  margin-right: 6px;
 }
 
 .content-wrapper {
-  margin-left: 41px;
+  margin-left: 23px;
   margin-top: 15px;
   line-height: 16px;
 }
@@ -45,10 +59,12 @@ limitations under the License.
   font-size: 12px;
   line-height: 18px;
   margin: 0;
+  padding: 0 13px;
+  text-indent: 0;
 }
 
 .extended-buttons {
-  margin-top: 10px;
+  margin: 10px 0 20px;
   font-size: 12px;
   font-weight: 700;
 }

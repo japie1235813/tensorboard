@@ -14,6 +14,7 @@ limitations under the License.
 ==============================================================================*/
 import {Component} from '@angular/core';
 import {Notification} from '../_redux/notification_center_types';
+import {notificationNotes} from './notification_contents';
 
 type StringDict = {
   [key: string]: string;
@@ -33,14 +34,7 @@ const iconMap: StringDict = {
   `,
 })
 export class NotificationCenterContainer {
-  notifications: Notification[] = [
-    {
-      category: "What's New",
-      date: 1579766400000,
-      title: '2.4 release',
-      content: '<li>update 1</li><li>update 2</li>',
-    },
-  ];
+  notifications: Notification[] = notificationNotes;
   dateStringList: string[] = [];
   iconList: string[] = [];
 
@@ -52,6 +46,14 @@ export class NotificationCenterContainer {
       const year = dateObj.getFullYear();
       this.dateStringList.push(`${month} ${date} ${year}`);
       this.iconList.push(iconMap[notfication.category]);
+    }
+
+    const menu = document.getElementById('notification-menu');
+    if (menu) {
+      menu.style.display = '';
+      menu.style.position = 'fixed';
+      menu.style.left = '6px';
+      menu.style.top = '71px';
     }
   }
 }

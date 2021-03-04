@@ -14,6 +14,7 @@ tf_ng_module(
     srcs = [
         "notification_center_component.ts",
         "notification_center_container.ts",
+        "notification_contents.ts",
         "view_types.ts",
         "views_module.ts",
     ],
