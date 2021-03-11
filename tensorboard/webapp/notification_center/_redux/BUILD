@@ -11,8 +11,10 @@ tf_ts_library(
         "notification_center_reducers.ts",
         "notification_center_selectors.ts",
     ],
+    visibility = ["//tensorboard:internal"],
     deps = [
         ":types",
+        ":actions",
         "//tensorboard/webapp:app_state",
         "//tensorboard/webapp/notification_center:types",
         "@npm//@angular/core",
@@ -26,6 +28,10 @@ tf_ts_library(
     name = "actions",
     srcs = [
         "notification_center_actions.ts",
+    ],
+    deps = [
+        ":types",
+        "@npm//@ngrx/store",
     ],
 )
 

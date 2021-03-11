@@ -27,3 +27,13 @@ export type Notification = {
   title: string;
   content: string;
 };
+
+export const NOTIFICATION_FEATURE_KEY = 'notification';
+
+export interface NotificationState {
+  latestNotifications: Notification | null;
+}
+
+export interface State {
+  [NOTIFICATION_FEATURE_KEY]?: NotificationState;
+}

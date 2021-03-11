@@ -12,12 +12,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-import {Component} from '@angular/core';
-import {from, Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {CategoryEnum} from '../_redux/notification_center_types';
-import {notificationNotes} from './notification_notes';
-import {ViewNotificationExt} from './view_types';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { getLatestNotifications } from '../../selectors';
+import { CategoryEnum } from '../_redux/notification_center_types';
+import { notificationNotes } from './notification_notes';
+import { ViewNotificationExt } from './view_types';
 
 const iconMap = new Map([[CategoryEnum.WHATS_NEW, 'info_outline_24px']]);
 
@@ -42,4 +44,12 @@ export class NotificationCenterContainer {
       });
     })
   );
+
+  constructor(private readonly store: Store<Notification>) {
+  }
+
+  ngOnInit() {
+    // Type 'MemoizedSelector<State, Notification | null, DefaultProjectorFn<Notification | null>>' is not assignable to type '"eventListeners"'.
+    // this.store.select(getLatestNotifications);
+  }
 }
