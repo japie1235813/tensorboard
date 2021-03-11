@@ -12,3 +12,35 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
+import {Action, createReducer, on} from '@ngrx/store';
+import * as actions from './notification_center_actions';
+import {NotificationState} from './notification_center_types';
+
+/** @typehack */ import * as _typeHackStore from '@ngrx/store';
+
+const initialState: NotificationState = {
+    latestNotifications: null,
+};
+
+const reducer = createReducer(
+  initialState,
+  on(
+    actions.NotificationReported,
+    (state: NotificationState, {category, title, content}): NotificationState => {
+      return {
+        ...state,
+        latestNotifications: {
+          category,
+          title,
+          content,
+          dateInMs: Date.now(),
+        },
+      };
+    }
+  )
+);
+
+export function reducers(state: NotificationState | undefined, action: Action) {
+  return reducer(state, action);
+}
+
