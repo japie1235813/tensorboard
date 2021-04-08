@@ -26,11 +26,6 @@ import {NotificationCenterContainer} from './notification_center_container';
 @NgModule({
   declarations: [NotificationCenterContainer, NotificationCenterComponent],
   exports: [NotificationCenterContainer],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-  ],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatMenuModule],
 })
 export class NotificationCenterViewModule {}
