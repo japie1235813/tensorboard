@@ -265,6 +265,7 @@ py_library(
         "//tensorboard/backend/event_processing:data_ingester",
         "//tensorboard/backend/event_processing:event_file_inspector",
         "//tensorboard/data:server_ingester",
+        # here
         "//tensorboard/plugins/core:core_plugin",
         "@org_pocoo_werkzeug",
     ],
@@ -370,11 +371,20 @@ tensorboard_zip_file(
     deps = [":assets"],
 )
 
+# genrule(
+#     name = "notification_notes",
+#     srcs = ["notification_notes.json"],
+#     outs = ["notification_notes.json"],
+#     cmd = "cat $(SRCS) >$@",
+# )
+
 tf_web_library(
     name = "assets",
     srcs = [
+        "notification_notes.json",
         "//tensorboard/webapp:index.html",
         "//tensorboard/webapp:index.js",
+        # "//tensorboard/webapp:notification.js",
         "//tensorboard/webapp:svg_bundle",
         "//tensorboard/webapp/widgets/line_chart_v2/lib/worker:chart_worker.js",
     ],
