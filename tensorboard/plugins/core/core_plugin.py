@@ -73,7 +73,10 @@ class CorePlugin(base_plugin.TBPlugin):
         self._window_title = context.window_title
         self._path_prefix = context.flags.path_prefix if context.flags else None
         self._assets_zip_provider = context.assets_zip_provider
+
         self._data_provider = context.data_provider
+        print(context.data_provider)
+
         self._include_debug_info = bool(include_debug_info)
 
     def is_active(self):
@@ -109,6 +112,7 @@ class CorePlugin(base_plugin.TBPlugin):
                 for path in zip_.namelist():
                     content = zip_.read(path)
                     # Opt out of gzipping index.html
+                    # print(path)
                     if path == "index.html":
                         apps["/" + path] = functools.partial(
                             self._serve_index, content
@@ -119,6 +123,7 @@ class CorePlugin(base_plugin.TBPlugin):
                     wsgi_app = functools.partial(
                         self._serve_asset, path, gzipped_asset_bytes
                     )
+                    #print('wsgi_app:', wsgi_app)
                     apps["/" + path] = wsgi_app
         apps["/"] = apps["/index.html"]
         return apps
@@ -302,6 +307,7 @@ class CorePlugin(base_plugin.TBPlugin):
         sorting on the run name. Tags are sorted by its name,
         displayName, and lastly, inserted time.
         """
+        print(apps)
         # TODO: move this to note file
         notifications = [
             {

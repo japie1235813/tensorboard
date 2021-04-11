@@ -249,6 +249,14 @@ genrule(
     cmd = "cat $(SRCS) >$@",
 )
 
+
+# genrule(
+#     name = "notifications_note_js",
+#     srcs = ["notifications_note.js"],
+#     outs = ["notifications_note.js"],
+#     cmd = "cat $(SRCS) >$@",
+# )
+
 tf_resource_digest_suffixer(
     name = "index",
     out = "index.html",
