@@ -7,6 +7,8 @@ package(default_visibility = ["//tensorboard:internal"])
 
 licenses(["notice"])
 
+exports_files(["notifications_note.json"])
+
 tf_ng_module(
     name = "oss_plugins_module",
     srcs = [
@@ -251,6 +253,13 @@ genrule(
     outs = ["index.js"],
     cmd = "cat $(SRCS) >$@",
 )
+
+# genrule(
+#     name = "notifications_note_js",
+#     srcs = ["notifications_note.js"],
+#     outs = ["notifications_note.js"],
+#     cmd = "cat $(SRCS) >$@",
+# )
 
 tf_resource_digest_suffixer(
     name = "index",
