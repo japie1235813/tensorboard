@@ -75,7 +75,7 @@ class CorePlugin(base_plugin.TBPlugin):
         self._assets_zip_provider = context.assets_zip_provider
 
         self._data_provider = context.data_provider
-        print(context.data_provider)
+        # print(context.data_provider)
 
         self._include_debug_info = bool(include_debug_info)
 
@@ -109,6 +109,7 @@ class CorePlugin(base_plugin.TBPlugin):
 
         with self._assets_zip_provider() as fp:
             with zipfile.ZipFile(fp) as zip_:
+                print(zip_.namelist())
                 for path in zip_.namelist():
                     content = zip_.read(path)
                     # Opt out of gzipping index.html
