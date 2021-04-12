@@ -75,6 +75,7 @@ tf_web_library(
     srcs = [
         ":index.html",
         ":polymer3_lib_binary_dev.js",
+        "//tensorboard/webapp:notifications_note.json",
         "//tensorboard/webapp:styles.css",
         "//tensorboard/webapp:svg_bundle",
         "//tensorboard/webapp/widgets/line_chart_v2/lib/worker:chart_worker.js",

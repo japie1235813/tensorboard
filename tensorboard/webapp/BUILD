@@ -7,6 +7,8 @@ package(default_visibility = ["//tensorboard:internal"])
 
 licenses(["notice"])
 
+exports_files(["notifications_note.json"])
+
 tf_ng_module(
     name = "oss_plugins_module",
     srcs = [
