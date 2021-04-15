@@ -82,7 +82,7 @@ class CorePlugin(base_plugin.TBPlugin):
             "/data/runs": self._serve_runs,
             "/data/experiments": self._serve_experiments,
             "/data/experiment_runs": self._serve_experiment_runs,
-            "/data/notifications": self._serve_notifications,
+            "/data/changelogs": self._serve_notifications,
             "/data/window_properties": self._serve_window_properties,
             "/events": self._redirect_to_index,
             "/favicon.ico": self._send_404_without_logging,
@@ -289,8 +289,7 @@ class CorePlugin(base_plugin.TBPlugin):
     @wrappers.Request.application
     def _serve_notifications(self, request):
         """Serve JSON payload of notifications to show in the UI."""
-        results = {"notifications": []}
-        return http_util.Respond(request, results, "application/json")
+        return util.redirect("notificiaitons_note.json")
 
 
 class CorePluginLoader(base_plugin.TBLoader):

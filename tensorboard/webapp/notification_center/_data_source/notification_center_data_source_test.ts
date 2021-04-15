@@ -49,7 +49,7 @@ describe('TBNotificationCenterDataSource test', () => {
     const resultSpy = jasmine.createSpy();
     dataSource.fetchNotifications().subscribe(resultSpy);
 
-    const req = httpMock.expectOne('data/notifications');
+    const req = httpMock.expectOne('data/changelogs');
     req.flush({notifications: [{}]});
 
     expect(resultSpy).toHaveBeenCalledWith({notifications: [{}]});
@@ -59,7 +59,7 @@ describe('TBNotificationCenterDataSource test', () => {
     const resultSpy = jasmine.createSpy();
     dataSource.fetchNotifications().subscribe(resultSpy);
 
-    const req = httpMock.expectOne('data/notifications');
+    const req = httpMock.expectOne('data/changelogs');
     req.flush(buildNotificationResponse());
 
     expect(resultSpy).toHaveBeenCalledWith(buildNotificationResponse());
