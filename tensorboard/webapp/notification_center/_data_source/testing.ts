@@ -13,24 +13,28 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {of} from 'rxjs';
 
-import {TBHttpClient} from '../../webapp_data_source/tb_http_client';
-import {
-  NotificationCenterDataSource,
-  NotificationCenterResponse,
-} from './types';
+import {NotificationCenterDataSource} from '../_data_source';
 
-/**
- * An implementation of NotificationCenterDataSource that fetchs notifications.
- */
+/** @typehack */ import * as _typeHackRxjs from 'rxjs';
+
 @Injectable()
-export class TBNotificationCenterDataSource
+export class TestingNotificationCenterDataSource
   implements NotificationCenterDataSource {
-  constructor(private readonly http: TBHttpClient) {}
-
-  fetchNotifications(): Observable<NotificationCenterResponse> {
-    return this.http.get<NotificationCenterResponse>(`data/notifications`);
+  fetchNotifications() {
+    return of({
+      notifications: [],
+    });
   }
+}
+
+export function provideTestingNotificationCenterDataSource() {
+  return [
+    TestingNotificationCenterDataSource,
+    {
+      provide: NotificationCenterDataSource,
+      useExisting: TestingNotificationCenterDataSource,
+    },
+  ];
 }

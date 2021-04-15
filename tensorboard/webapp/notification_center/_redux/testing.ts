@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 import {Injectable} from '@angular/core';
-import {of} from 'rxjs';
+
 import {
   NotificationCenterDataSource,
   NotificationCenterResponse as DataSourceNotifications,
@@ -41,26 +41,6 @@ export function buildStateFromNotificationState(
   runsState: NotificationState
 ): State {
   return {[NOTIFICATION_FEATURE_KEY]: runsState};
-}
-
-@Injectable()
-export class TestingNotificationCenterDataSource
-  implements NotificationCenterDataSource {
-  fetchNotifications() {
-    return of({
-      notifications: [],
-    });
-  }
-}
-
-export function provideTestingNotificationCenterDataSource() {
-  return [
-    TestingNotificationCenterDataSource,
-    {
-      provide: NotificationCenterDataSource,
-      useExisting: TestingNotificationCenterDataSource,
-    },
-  ];
 }
 
 export function createNotification(): DataSourceNotifications {

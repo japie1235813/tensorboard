@@ -80,6 +80,7 @@ tf_ts_library(
         "//tensorboard/webapp/angular:expect_ngrx_store_testing",
         "//tensorboard/webapp/core/testing",
         "//tensorboard/webapp/notification_center/_data_source",
+        "//tensorboard/webapp/notification_center/_data_source:testing",
         "//tensorboard/webapp/webapp_data_source:http_client_testing",
         "@npm//@ngrx/effects",
         "@npm//@types/jasmine",

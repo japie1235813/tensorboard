@@ -30,10 +30,8 @@ import {
   TEST_ONLY,
 } from './notification_center_effects';
 import {CategoryEnum} from './notification_center_types';
-import {
-  createNotification,
-  provideTestingNotificationCenterDataSource,
-} from './testing';
+import {createNotification} from './testing';
+import {provideTestingNotificationCenterDataSource} from '../_data_source/testing';
 
 describe('notification center effects', () => {
   let dataSource: NotificationCenterDataSource;
