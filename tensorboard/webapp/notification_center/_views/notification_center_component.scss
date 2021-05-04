@@ -39,6 +39,13 @@ limitations under the License.
   padding: 15px 15px 0 15px;
 }
 
+.menu-item-test {
+  padding: 15px 15px 0 15px;
+}
+.menu-item-tes:last-child {
+  padding: 15px;
+}
+
 .menu-item:last-child {
   border-bottom: 0;
 }

@@ -26,6 +26,10 @@ limitations under the License.
 </button>
 
 <mat-menu #menu="matMenu" class="notification-menu">
+  <div class="menu-item-test">Color by</div>
+  <div class="menu-item-test">experiment</div>
+  <div class="menu-item-test">run</div>
+  <div class="menu-item-test" [matMenuTriggerFor]="sub_menu">regex</div>
   <div>
     <div *ngFor="let notification of notifications" class="menu-item">
       <div>
@@ -52,4 +56,8 @@ limitations under the License.
       </div>
     </div>
   </div>
+</mat-menu>
+
+<mat-menu #sub_menu="matMenu">
+  <button mat-menu-item>+ add rule</button>
 </mat-menu>
